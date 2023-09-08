@@ -73,6 +73,16 @@ gdl_request <- function(session) {
     url <- paste0(url, '&extrapolation=2&nearest_years=', session@extrapolationYearsNearest)
   }
 
+  df <- gdl_request_csv(session, url)
+  return(df)
+}
+
+# Internal function: perform and process CSV request by URL
+gdl_request_csv <- function(session, url) {
+  if (class(session) != 'GDLSession') {
+    stop("Argument must be a GDL Session Object")
+  }
+
   # Prepare request with error handling
   req <- request(url)
   req <- req_headers(req, "Accept" = "text/csv")
@@ -86,6 +96,30 @@ gdl_request <- function(session) {
   resp <- req_perform(req)
   csv <- resp_body_string(resp)
   df <- read.csv(text=csv)
+  return(df)
+}
+
+# Rerefence functions -------------------------------------------------------------------------
+
+# List indicators
+gdl_indicators <- function(session) {
+  if (class(session) != 'GDLSession') {
+    stop("Argument must be a GDL Session Object")
+  }
+
+  url <- paste0(GDL_BASEURL, '/', session@dataset, '/api/indicators/?token=', session@token)
+  df <- gdl_request_csv(session, url)
+  return(df)
+}
+
+# List countries
+gdl_countries <- function(session) {
+  if (class(session) != 'GDLSession') {
+    stop("Argument must be a GDL Session Object")
+  }
+
+  url <- paste0(GDL_BASEURL, '/', session@dataset, '/api/countries/?token=', session@token)
+  df <- gdl_request_csv(session, url)
   return(df)
 }
 
