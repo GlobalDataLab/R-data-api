@@ -9,6 +9,7 @@ setClass('GDLSession', slots=list(
   token="character",
   dataset="character",
   indicators="character",
+  countries="character",
   year="numeric",
   interpolation="logical",
   extrapolationYearsLinear="numeric",
@@ -54,6 +55,11 @@ gdl_request <- function(session) {
   # Indicators...
   url <- paste0(url, paste(session@indicators, collapse='+'), '/')
 
+  # Countries?
+  if (length(session@countries) > 0) {
+    url <- paste0(url, paste(session@countries, collapse='+'), '/')
+  }
+
   # Format and token...
   url <- paste0(url, '?format=csv&token=', session@token)
 
@@ -77,6 +83,39 @@ gdl_request <- function(session) {
 }
 
 # Setter functions ----------------------------------------------------------------------------
+
+set_country <- function(session, country) {
+  if (class(session) != 'GDLSession') {
+    stop("Primary argument must be a GDL Session Object")
+  }
+  if (!is.character(country) || nchar(country) != 3) {
+    stop("Secondary argument must be an ISO3 country code")
+  }
+
+  session@countries <- c(country)
+  return(session)
+}
+
+set_countries <- function(session, countries) {
+  if (class(session) != 'GDLSession') {
+    stop("Primary argument must be a GDL Session Object")
+  }
+  if (!is.character(countries)) {
+    stop("Secondary argument must be a list of ISO3 country codes")
+  }
+
+  session@countries <- countries
+  return(session)
+}
+
+set_countries_all <- function(session) {
+  if (class(session) != 'GDLSession') {
+    stop("Primary argument must be a GDL Session Object")
+  }
+
+  session@countries <- ''
+  return(session)
+}
 
 set_extrapolation_years_linear <- function(session, years) {
   if (class(session) != 'GDLSession') {
