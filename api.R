@@ -117,6 +117,18 @@ set_countries_all <- function(session) {
   return(session)
 }
 
+set_dataset <- function(session, dataset) {
+  if (class(session) != 'GDLSession') {
+    stop("Primary argument must be a GDL Session Object")
+  }
+  if (!is.character(dataset)) {
+    stop("Secondary argument must be a dataset identifier")
+  }
+
+  session@dataset <- dataset
+  return(session)
+}
+
 set_extrapolation_years_linear <- function(session, years) {
   if (class(session) != 'GDLSession') {
     stop("Primary argument must be a GDL Session Object")
@@ -140,6 +152,30 @@ set_extrapolation_years_nearest <- function(session, years) {
 
   session@extrapolationYearsLinear <- 0
   session@extrapolationYearsNearest <- years
+  return(session)
+}
+
+set_indicator <- function(session, indicator) {
+  if (class(session) != 'GDLSession') {
+    stop("Primary argument must be a GDL Session Object")
+  }
+  if (!is.character(indicator)) {
+    stop("Secondary argument must be an indicator identifier")
+  }
+
+  session@indicators <- c(indicator)
+  return(session)
+}
+
+set_indicators <- function(session, indicators) {
+  if (class(session) != 'GDLSession') {
+    stop("Primary argument must be a GDL Session Object")
+  }
+  if (!is.character(indicators)) {
+    stop("Secondary argument must be a list of indicator identifiers")
+  }
+
+  session@indicators <- indicators
   return(session)
 }
 
