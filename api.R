@@ -73,9 +73,16 @@ gdl_request <- function(session) {
     url <- paste0(url, '&extrapolation=2&nearest_years=', session@extrapolationYearsNearest)
   }
 
-  # Perform the request and return data frame
+  # Prepare request with error handling
   req <- request(url)
-  req %>% req_headers("Accept" = "text/csv")
+  req <- req_headers(req, "Accept" = "text/csv")
+  req <- req_error(req, body=function(resp) {
+    csv <- resp_body_string(resp)
+    details <- read.csv(text=csv)
+    return(c(details$title, details$body))
+  })
+
+  # Perform the request and return data frame
   resp <- req_perform(req)
   csv <- resp_body_string(resp)
   df <- read.csv(text=csv)
