@@ -17,8 +17,8 @@ setClass('GDLSession', slots=list(
 ))
 
 # Hide internals from simple print statements; just show the token used
-setMethod('show', 'GDLSession', function(session) {
-  cat("GDL Session Object (token = '", session@token, "')\n", sep="")
+setMethod('show', 'GDLSession', function(object) {
+  cat("GDL Session Object (token = '", object@token, "')\n", sep="")
 })
 
 # Main session constructor and request function -----------------------------------------------
