@@ -26,7 +26,7 @@ setMethod('show', 'GDLSession', function(object) {
 # Session object constructor function
 gdl_session <- function(token) {
   session <- new('GDLSession',
-    token = "abcd",
+    token = token,
     dataset = "areadata",
     indicators = c('iwi', 'phone', 'fridge'),
     year = 2021,
