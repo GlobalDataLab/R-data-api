@@ -2,7 +2,9 @@ library(httr2)
 
 GDL_BASEURL <- "http://dev2.globaldatalab.org:8080"
 
-# Introduce a GDLSession class
+# GDLSession class ----------------------------------------------------------------------------
+
+# Introduce GDLSession class
 setClass('GDLSession', slots=list(
   token="character",
   dataset="character",
@@ -17,6 +19,8 @@ setClass('GDLSession', slots=list(
 setMethod('show', 'GDLSession', function(session) {
   cat("GDL Session Object (token = '", session@token, "')\n", sep="")
 })
+
+# Main session constructor and request function -----------------------------------------------
 
 # Session object constructor function
 gdl_session <- function(token) {
@@ -70,4 +74,56 @@ gdl_request <- function(session) {
   csv <- resp_body_string(resp)
   df <- read.csv(text=csv)
   return(df)
+}
+
+# Setter functions ----------------------------------------------------------------------------
+
+set_extrapolation_years_linear <- function(session, years) {
+  if (class(session) != 'GDLSession') {
+    stop("Primary argument must be a GDL Session Object")
+  }
+  if (!is.numeric(years)) {
+    stop("Secondary argument must be numeric")
+  }
+
+  session@extrapolationYearsLinear <- years
+  session@extrapolationYearsNearest <- 0
+  return(session)
+}
+
+set_extrapolation_years_nearest <- function(session, years) {
+  if (class(session) != 'GDLSession') {
+    stop("Primary argument must be a GDL Session Object")
+  }
+  if (!is.numeric(years)) {
+    stop("Secondary argument must be numeric")
+  }
+
+  session@extrapolationYearsLinear <- 0
+  session@extrapolationYearsNearest <- years
+  return(session)
+}
+
+set_interpolation <- function(session, state) {
+  if (class(session) != 'GDLSession') {
+    stop("Primary argument must be a GDL Session Object")
+  }
+  if (!is.logical(state)) {
+    stop("Secondary argument must be logical")
+  }
+
+  session@interpolation <- state
+  return(session)
+}
+
+set_year <- function(session, year) {
+  if (class(session) != 'GDLSession') {
+    stop("Primary argument must be a GDL Session Object")
+  }
+  if (!is.numeric(year)) {
+    stop("Secondary argument must be numeric")
+  }
+
+  session@year <- year
+  return(session)
 }
