@@ -35,6 +35,10 @@ gdl_session <- function(token) {
 
 # Data request function
 gdl_request <- function(session) {
+  if (class(session) != 'GDLSession') {
+    stop("Argument must be a GDL Session Object")
+  }
+
   # Set up a base API url
   url <- paste0(GDL_BASEURL, '/', session@dataset, '/download/')
 
