@@ -1,6 +1,6 @@
 library(httr2)
 
-GDL_BASEURL <- "http://dev2.globaldatalab.org:8080"
+GDL_BASEURL <- "https://globaldatalab.org"
 
 # GDLSession class ----------------------------------------------------------------------------
 
