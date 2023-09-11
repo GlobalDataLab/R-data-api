@@ -123,6 +123,20 @@ gdl_countries <- function(session) {
   return(df)
 }
 
+# List regions
+gdl_regions <- function(session, country) {
+  if (class(session) != 'GDLSession') {
+    stop("Primary argument must be a GDL Session Object")
+  }
+  if (!is.character(country)) {
+    stop("Secondary argument must be an ISO3 country code")
+  }
+
+  url <- paste0(GDL_BASEURL, '/', session@dataset, '/api/regions/?country=', country, '&token=', session@token)
+  df <- gdl_request_csv(session, url)
+  return(df)
+}
+
 # Setter functions ----------------------------------------------------------------------------
 
 set_country <- function(session, country) {
