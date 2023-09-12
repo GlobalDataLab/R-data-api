@@ -10,6 +10,7 @@ setClass('GDLSession', slots=list(
   dataset="character",
   indicators="character",
   countries="character",
+  levels="numeric",
   year="numeric",
   interpolation="logical",
   extrapolationYearsLinear="numeric",
@@ -29,6 +30,7 @@ gdl_session <- function(token) {
     token = token,
     dataset = "areadata",
     indicators = c('iwi', 'phone', 'fridge'),
+    levels = c(0),
     year = 2021,
     interpolation = T,
     extrapolationYearsLinear = 0,
@@ -62,6 +64,11 @@ gdl_request <- function(session) {
 
   # Format and token...
   url <- paste0(url, '?format=csv&token=', session@token)
+
+  # Levels?
+  if (session@levels[1] != 0) {
+    url <- paste0(url, '&levels=', paste(session@levels, collapse='+'))
+  }
 
   # Interpolation
   url <- paste0(url, '&interpolation=', ifelse(session@interpolation, 1, 0))
@@ -99,7 +106,7 @@ gdl_request_csv <- function(session, url) {
   return(df)
 }
 
-# Rerefence functions -------------------------------------------------------------------------
+# Reference functions -------------------------------------------------------------------------
 
 # List indicators
 gdl_indicators <- function(session) {
@@ -108,6 +115,17 @@ gdl_indicators <- function(session) {
   }
 
   url <- paste0(GDL_BASEURL, '/', session@dataset, '/api/indicators/?token=', session@token)
+  df <- gdl_request_csv(session, url)
+  return(df)
+}
+
+# List levels
+gdl_levels <- function(session) {
+  if (class(session) != 'GDLSession') {
+    stop("Argument must be a GDL Session Object")
+  }
+
+  url <- paste0(GDL_BASEURL, '/', session@dataset, '/api/levels/?token=', session@token)
   df <- gdl_request_csv(session, url)
   return(df)
 }
@@ -243,6 +261,18 @@ set_interpolation <- function(session, state) {
   }
 
   session@interpolation <- state
+  return(session)
+}
+
+set_levels <- function(session, levels) {
+  if (class(session) != 'GDLSession') {
+    stop("Primary argument must be a GDL Session Object")
+  }
+  if (!is.numeric(levels)) {
+    stop("Secondary argument must be a list of level identifiers")
+  }
+
+  session@levels <- levels
   return(session)
 }
 
