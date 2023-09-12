@@ -1,5 +1,7 @@
+#' @importFrom methods is
+
 set_country <- function(session, country) {
-  if (class(session) != 'GDLSession') {
+  if (is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
   }
   if (!is.character(country) || nchar(country) != 3) {
@@ -11,7 +13,7 @@ set_country <- function(session, country) {
 }
 
 set_countries <- function(session, countries) {
-  if (class(session) != 'GDLSession') {
+  if (is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
   }
   if (!is.character(countries)) {
@@ -23,7 +25,7 @@ set_countries <- function(session, countries) {
 }
 
 set_countries_all <- function(session) {
-  if (class(session) != 'GDLSession') {
+  if (is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
   }
 
@@ -32,7 +34,7 @@ set_countries_all <- function(session) {
 }
 
 set_dataset <- function(session, dataset) {
-  if (class(session) != 'GDLSession') {
+  if (is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
   }
   if (!is.character(dataset)) {
@@ -44,7 +46,7 @@ set_dataset <- function(session, dataset) {
 }
 
 set_extrapolation_years_linear <- function(session, years) {
-  if (class(session) != 'GDLSession') {
+  if (is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
   }
   if (!is.numeric(years)) {
@@ -57,7 +59,7 @@ set_extrapolation_years_linear <- function(session, years) {
 }
 
 set_extrapolation_years_nearest <- function(session, years) {
-  if (class(session) != 'GDLSession') {
+  if (is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
   }
   if (!is.numeric(years)) {
@@ -70,7 +72,7 @@ set_extrapolation_years_nearest <- function(session, years) {
 }
 
 set_indicator <- function(session, indicator) {
-  if (class(session) != 'GDLSession') {
+  if (is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
   }
   if (!is.character(indicator)) {
@@ -82,7 +84,7 @@ set_indicator <- function(session, indicator) {
 }
 
 set_indicators <- function(session, indicators) {
-  if (class(session) != 'GDLSession') {
+  if (is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
   }
   if (!is.character(indicators)) {
@@ -94,7 +96,7 @@ set_indicators <- function(session, indicators) {
 }
 
 set_interpolation <- function(session, state) {
-  if (class(session) != 'GDLSession') {
+  if (is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
   }
   if (!is.logical(state)) {
@@ -106,7 +108,7 @@ set_interpolation <- function(session, state) {
 }
 
 set_levels <- function(session, levels) {
-  if (class(session) != 'GDLSession') {
+  if (is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
   }
   if (!is.numeric(levels)) {
@@ -118,7 +120,7 @@ set_levels <- function(session, levels) {
 }
 
 set_year <- function(session, year) {
-  if (class(session) != 'GDLSession') {
+  if (is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
   }
   if (!is.numeric(year)) {

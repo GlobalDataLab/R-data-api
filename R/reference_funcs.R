@@ -1,6 +1,6 @@
 # List indicators
 gdl_indicators <- function(session) {
-  if (class(session) != 'GDLSession') {
+  if (is(session, GDLSession)) {
     stop("Argument must be a GDL Session Object")
   }
 
@@ -11,7 +11,7 @@ gdl_indicators <- function(session) {
 
 # List levels
 gdl_levels <- function(session) {
-  if (class(session) != 'GDLSession') {
+  if (is(session, GDLSession)) {
     stop("Argument must be a GDL Session Object")
   }
 
@@ -22,7 +22,7 @@ gdl_levels <- function(session) {
 
 # List countries
 gdl_countries <- function(session) {
-  if (class(session) != 'GDLSession') {
+  if (is(session, GDLSession)) {
     stop("Argument must be a GDL Session Object")
   }
 
@@ -33,7 +33,7 @@ gdl_countries <- function(session) {
 
 # List regions
 gdl_regions <- function(session, country) {
-  if (class(session) != 'GDLSession') {
+  if (is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
   }
   if (!is.character(country)) {

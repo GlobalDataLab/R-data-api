@@ -1,10 +1,12 @@
-library(httr2)
+#' @importFrom httr2 request req_headers req_error resp_body_string req_perform
+#' @importFrom methods new is
+#' @importFrom utils read.csv
 
 GDL_BASEURL <- "http://dev2.globaldatalab.org:8080"
 
 # Data request function
 gdl_request <- function(session) {
-  if (class(session) != 'GDLSession') {
+  if (is(session, GDLSession)) {
     stop("Argument must be a GDL Session Object")
   }
 
@@ -48,7 +50,7 @@ gdl_request <- function(session) {
 
 # Internal function: perform and process CSV request by URL
 gdl_request_csv <- function(session, url) {
-  if (class(session) != 'GDLSession') {
+  if (is(session, GDLSession)) {
     stop("Argument must be a GDL Session Object")
   }
 
