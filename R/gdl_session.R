@@ -1,6 +1,9 @@
+
 # GDLSession class ----------------------------------------------------------------------------
 
-# Introduce GDLSession class
+#' GDLSession class
+#'
+#' @exportClass GDLSession
 setClass('GDLSession', slots=list(
   token="character",
   dataset="character",
@@ -20,7 +23,14 @@ setMethod('show', 'GDLSession', function(object) {
 
 # Main session constructor and request function -----------------------------------------------
 
-# Session object constructor function
+#' GDL session constructor
+#'
+#' Returns a new GDL session object
+#'
+#' @param token
+#' A valid GDL API token, obtainable from GlobalDataLab.org
+#'
+#' @export
 gdl_session <- function(token) {
   session <- new('GDLSession',
                  token = token,

@@ -1,5 +1,16 @@
-#' @importFrom methods is
 
+#' Set country to retrieve data for
+#'
+#' The country to retrieve GDL indicator data for.
+#'
+#' @param session
+#' A valid GDL session object to interface with.
+#'
+#' @param country
+#' An ISO3 country code.
+#'
+#' @importFrom methods is
+#' @export
 set_country <- function(session, country) {
   if (is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
@@ -12,6 +23,18 @@ set_country <- function(session, country) {
   return(session)
 }
 
+#' Set countries to retrieve data for
+#'
+#' The countries to retrieve GDL indicator data for.
+#'
+#' @param session
+#' A valid GDL session object to interface with.
+#'
+#' @param countries
+#' A vector of ISO3 country codes.
+#'
+#' @importFrom methods is
+#' @export
 set_countries <- function(session, countries) {
   if (is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
@@ -24,6 +47,16 @@ set_countries <- function(session, countries) {
   return(session)
 }
 
+#' Set session to retrieve data for all available countries
+#'
+#' Switch the session to retrieve data for all available countries,
+#' rather than a specific set of countries.
+#'
+#' @param session
+#' A valid GDL session object to interface with.
+#'
+#' @importFrom methods is
+#' @export
 set_countries_all <- function(session) {
   if (is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
@@ -33,6 +66,17 @@ set_countries_all <- function(session) {
   return(session)
 }
 
+#' Set session to retrieve data from a particular dataset
+#'
+#' Switch the session to retrieve data from the dataset specified.
+#'
+#' @param session
+#' A valid GDL session object to interface with.
+#'
+#' @param dataset
+#' Dataset identifier (string)
+#'
+#' @export
 set_dataset <- function(session, dataset) {
   if (is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
@@ -45,6 +89,20 @@ set_dataset <- function(session, dataset) {
   return(session)
 }
 
+#' Set the number of years to extrapolate linearly.
+#'
+#' Sets the number of years to linearly extrapolate at dataset edges.
+#' Turns extrapolation on if it isn't already. Overrides the number of
+#' nearest years if set.
+#'
+#' @param session
+#' A valid GDL session object to interface with.
+#'
+#' @param years
+#' Number of years to extrapolate (integer)
+#'
+#' @importFrom methods is
+#' @export
 set_extrapolation_years_linear <- function(session, years) {
   if (is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
@@ -58,6 +116,21 @@ set_extrapolation_years_linear <- function(session, years) {
   return(session)
 }
 
+#' Set the number of years to fill out using nearest available data
+#'
+#' Sets the number of years to fill out using nearest available data
+#' at dataset edges, as a means of extrapolation. Turns extrapolation on
+#' if it isn't already. Overrides the number of years to linearly
+#' extrapolate if set.
+#'
+#' @param session
+#' A valid GDL session object to interface with.
+#'
+#' @param years
+#' Number of years to copy (integer)
+#'
+#' @importFrom methods is
+#' @export
 set_extrapolation_years_nearest <- function(session, years) {
   if (is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
@@ -71,6 +144,18 @@ set_extrapolation_years_nearest <- function(session, years) {
   return(session)
 }
 
+#' Set the indicator to retrieve
+#'
+#' Sets the indicator to retrieve from the dataset.
+#'
+#' @param session
+#' A valid GDL session object to interface with.
+#'
+#' @param indicator
+#' Indicator to retrieve (string)
+#'
+#' @importFrom methods is
+#' @export
 set_indicator <- function(session, indicator) {
   if (is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
@@ -83,6 +168,18 @@ set_indicator <- function(session, indicator) {
   return(session)
 }
 
+#' Set the indicators to retrieve
+#'
+#' Sets the indicators to retrieve from the dataset.
+#'
+#' @param session
+#' A valid GDL session object to interface with.
+#'
+#' @param indicators
+#' Vector of indicators to retrieve (string)
+#'
+#' @importFrom methods is
+#' @export
 set_indicators <- function(session, indicators) {
   if (is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
@@ -95,6 +192,17 @@ set_indicators <- function(session, indicators) {
   return(session)
 }
 
+#' Set interpolation state
+#'
+#' Turns interpolation on (T) or off (F).
+#'
+#' @param session
+#' A valid GDL session object to interface with.
+#'
+#' @param state
+#' Whether or not to use interpolation (boolean)
+#'
+#' @export
 set_interpolation <- function(session, state) {
   if (is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
@@ -107,6 +215,19 @@ set_interpolation <- function(session, state) {
   return(session)
 }
 
+#' Set data levels to retrieve data for
+#'
+#' Specify which data levels to retrieve data for.
+#' A list of levels may be obtained through `gdl_levels`.
+#'
+#' @param session
+#' A valid GDL session object to interface with.
+#'
+#' @param levels
+#' Vector of level identifiers (integers)
+#'
+#' @importFrom methods is
+#' @export
 set_levels <- function(session, levels) {
   if (is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
@@ -119,6 +240,19 @@ set_levels <- function(session, levels) {
   return(session)
 }
 
+#' Set year to retrieve data for
+#'
+#' Specify which year to retrieve data for.
+#' Only used when retrieving multiple indicators at once.
+#'
+#' @param session
+#' A valid GDL session object to interface with.
+#'
+#' @param year
+#' Year to retrieve data for (integer)
+#'
+#' @importFrom methods is
+#' @export
 set_year <- function(session, year) {
   if (is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")

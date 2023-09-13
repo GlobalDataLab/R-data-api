@@ -1,4 +1,11 @@
-# List indicators
+#' Get indicator list
+#'
+#' Returns the list of indicators available in the current dataset.
+#'
+#' @param session
+#' A valid GDL session object to interface with.
+#'
+#' @export
 gdl_indicators <- function(session) {
   if (is(session, GDLSession)) {
     stop("Argument must be a GDL Session Object")
@@ -9,7 +16,14 @@ gdl_indicators <- function(session) {
   return(df)
 }
 
-# List levels
+#' Get level list
+#'
+#' Returns a list of data levels available in the current dataset.
+#'
+#' @param session
+#' A valid GDL session object to interface with.
+#'
+#' @export
 gdl_levels <- function(session) {
   if (is(session, GDLSession)) {
     stop("Argument must be a GDL Session Object")
@@ -20,7 +34,14 @@ gdl_levels <- function(session) {
   return(df)
 }
 
-# List countries
+#' Get country list
+#'
+#' Returns a list of countries available in the current dataset.
+#'
+#' @param session
+#' A valid GDL session object to interface with.
+#'
+#' @export
 gdl_countries <- function(session) {
   if (is(session, GDLSession)) {
     stop("Argument must be a GDL Session Object")
@@ -31,7 +52,17 @@ gdl_countries <- function(session) {
   return(df)
 }
 
-# List regions
+#' Get region list
+#'
+#' Returns a list of regions available for a particular country.
+#'
+#' @param session
+#' A valid GDL session object to interface with.
+#'
+#' @param country
+#' An ISO3 country code.
+#'
+#' @export
 gdl_regions <- function(session, country) {
   if (is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
