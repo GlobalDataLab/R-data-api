@@ -11,7 +11,7 @@ GDL_BASEURL <- "http://dev2.globaldatalab.org:8080"
 #'
 #' @export
 gdl_request <- function(session) {
-  if (is(session, GDLSession)) {
+  if (!is(session, GDLSession)) {
     stop("Argument must be a GDL Session Object")
   }
 
@@ -55,7 +55,7 @@ gdl_request <- function(session) {
 
 # Internal function: perform and process CSV request by URL
 gdl_request_csv <- function(session, url) {
-  if (is(session, )) {
+  if (!is(session, GDLSession)) {
     stop("Argument must be a GDL Session Object")
   }
 

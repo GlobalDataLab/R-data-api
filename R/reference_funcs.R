@@ -7,7 +7,7 @@
 #'
 #' @export
 gdl_indicators <- function(session) {
-  if (is(session, GDLSession)) {
+  if (!is(session, GDLSession)) {
     stop("Argument must be a GDL Session Object")
   }
 
@@ -25,7 +25,7 @@ gdl_indicators <- function(session) {
 #'
 #' @export
 gdl_levels <- function(session) {
-  if (is(session, GDLSession)) {
+  if (!is(session, GDLSession)) {
     stop("Argument must be a GDL Session Object")
   }
 
@@ -43,7 +43,7 @@ gdl_levels <- function(session) {
 #'
 #' @export
 gdl_countries <- function(session) {
-  if (is(session, GDLSession)) {
+  if (!is(session, GDLSession)) {
     stop("Argument must be a GDL Session Object")
   }
 
@@ -64,7 +64,7 @@ gdl_countries <- function(session) {
 #'
 #' @export
 gdl_regions <- function(session, country) {
-  if (is(session, GDLSession)) {
+  if (!is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
   }
   if (!is.character(country)) {
