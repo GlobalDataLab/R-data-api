@@ -2,7 +2,7 @@
 #' @importFrom methods new is
 #' @importFrom utils read.csv
 
-GDL_BASEURL <- "http://dev2.globaldatalab.org:8080"
+GDL_BASEURL <- "https://globaldatalab.org"
 
 #' Data request function
 #'
@@ -60,7 +60,6 @@ gdl_request_csv <- function(session, url) {
   }
 
   # Prepare request with error handling
-  print(url)
   req <- request(url)
   req <- req_headers(req, "Accept" = "text/csv")
   req <- req_error(req, body=function(resp) {
