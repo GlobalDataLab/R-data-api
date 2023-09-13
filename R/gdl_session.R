@@ -1,10 +1,8 @@
-
-# GDLSession class ----------------------------------------------------------------------------
-
 #' GDLSession class
 #'
+#' @export
 #' @exportClass GDLSession
-setClass('GDLSession', slots=list(
+GDLSession <- setClass('GDLSession', slots=list(
   token="character",
   dataset="character",
   indicators="character",
@@ -16,12 +14,15 @@ setClass('GDLSession', slots=list(
   extrapolationYearsNearest="numeric"
 ))
 
-# Hide internals from simple print statements; just show the token used
-setMethod('show', 'GDLSession', function(object) {
+#' GDLSession show function
+#'
+#' This is a user-friendly show function for the GDLSession class,
+#' hiding internals from simple print statements.
+#
+#' @export
+show.GDLSession <- setMethod('show', 'GDLSession', function(object) {
   cat("GDL Session Object (token = '", object@token, "')\n", sep="")
 })
-
-# Main session constructor and request function -----------------------------------------------
 
 #' GDL session constructor
 #'

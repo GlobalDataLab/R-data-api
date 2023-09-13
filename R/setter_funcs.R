@@ -1,4 +1,3 @@
-
 #' Set country to retrieve data for
 #'
 #' The country to retrieve GDL indicator data for.
