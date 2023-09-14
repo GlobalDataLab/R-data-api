@@ -6,7 +6,7 @@ Authors@R:
 Description: Retrieve datasets from the Global Data Lab (GDL) website directly into R data frames.
     Functions are provided to reference available options (indicators, regions, countries) as well.
 Depends:
-    R (>= 4.0)
+    R (>= 3.4)
 Imports:
     httr2,
     methods
