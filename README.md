@@ -2,7 +2,7 @@
 
 [![CRAN Status](https://www.r-pkg.org/badges/version/gdldata)](https://cran.r-project.org/package=gdldata)
 
-Retrieve datasets from the Global Data Lab (GDL) website directly into R dataframes.
+Retrieve datasets from the Global Data Lab (GDL) website directly into R data frames.
 Functions are provided to reference available options (indicators, regions, countries) as well.
 
 ## Prerequisites
