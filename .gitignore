@@ -1,2 +1,7 @@
 *.Rproj*
+.DS_Store
+.Rdata
+.Rhistory
 .Rproj.user
+docs/
+man/
