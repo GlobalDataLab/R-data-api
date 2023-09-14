@@ -3,9 +3,8 @@ Title: Global Data Lab R API
 Version: 0.1
 Authors@R: 
     person("Aaron", "van Geffen", , "aaron.vangeffen@ru.nl", role = c("aut", "cre"))
-Description: The gdldata package allows users to retrieve datasets from the Global Data Lab
-    website, straight into R dataframes. Functions are provided to reference the available
-    options (indicators, regions, countries) as well.
+Description: Retrieve datasets from the Global Data Lab (GDL) website directly into R dataframes.
+    Functions are provided to reference available options (indicators, regions, countries) as well.
 Depends:
     R (>= 4.0)
 Imports:
