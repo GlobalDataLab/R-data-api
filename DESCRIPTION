@@ -13,6 +13,8 @@ Imports:
     methods
 Suggests:
     magrittr
+URL: https://globaldatalab.org/, https://github.com/GlobalDataLab/R-data-api
+BugReports: https://github.com/GlobalDataLab/R-data-api
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
