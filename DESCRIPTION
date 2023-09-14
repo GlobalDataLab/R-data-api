@@ -12,7 +12,7 @@ Imports:
     methods
 Suggests:
     magrittr
-URL: https://docs.globaldatalab.org/gdldata, https://github.com/GlobalDataLab/R-data-api
+URL: https://docs.globaldatalab.org/gdldata/, https://github.com/GlobalDataLab/R-data-api
 BugReports: https://github.com/GlobalDataLab/R-data-api/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
