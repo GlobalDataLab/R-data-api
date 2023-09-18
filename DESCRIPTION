@@ -3,7 +3,7 @@ Title: Global Data Lab R API
 Version: 0.1
 Authors@R: 
     person("Aaron", "van Geffen", , "aaron.vangeffen@ru.nl", role = c("aut", "cre"))
-Description: Retrieve datasets from the Global Data Lab (GDL) website directly into R data frames.
+Description: Retrieve datasets from the Global Data Lab website directly into R data frames.
     Functions are provided to reference available options (indicators, regions, countries) as well.
 Depends:
     R (>= 3.4)
