@@ -45,7 +45,7 @@ For example, we can use it to retrieve the [IWI](https://globaldatalab.org/iwi/)
 
 ```R
 sess <- set_indicator(sess, 'iwi')
-sess <- set_country(sess, 'IND)
+sess <- set_country(sess, 'IND')
 iwi_india <- gdl_request(sess)
 ```
 
@@ -59,8 +59,11 @@ sess <- set_indicators(sess, c('healthindex', 'edindex', 'incindex'))
 shdi_benelux <- gdl_request(sess)
 ```
 
-To reduce verbosity, popular pipe operators may be used as well. We recommend the use of
-[`magrittr`](https://magrittr.tidyverse.org/) for this purpose. Consider the following example:
+### Using pipes instead
+
+To reduce verbosity, popular pipe operators may be used as well. You can either use the built-in
+pipe operator `|>` (R >= 4.1) or use the `%>%` operator from [`magrittr`](https://magrittr.tidyverse.org/)
+as a substitute. Consider the following example:
 
 ```R
 library(magrittr)
@@ -74,6 +77,17 @@ shdi_benelux <- gdl_request(sess)
 
 Note that we could prepend `gdl_session()` and append `gdl_request()` to the pipe chain as well.
 However, to facilitate reuse of the session object, we recommend against this.
+
+### Additional reference functions
+
+The GDL database may be explored fully without having to fall back to browsing the website.
+To this end, we provide the following reference functions:
+```R
+gdl_indicators(session)    # retrieves a list of indicators
+gdl_levels(session)        # retrieves a list of aggregation levels
+gdl_countries(session)     # retrieves a list of available countries
+gdl_regions(session, iso3) # retrieves a list of regions in a particular country
+```
 
 ## Contributing
 
