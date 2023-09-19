@@ -8,11 +8,13 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' # Create a session using your API token (provided by environment here)
 #' session <- gdl_session(Sys.getenv('GDL_API_TOKEN'))
 #' # Request list of available indicators
 #' indicators <- gdl_indicators(session)
 #' head(indicators, n=10)
+#' }
 gdl_indicators <- function(session) {
   if (!is(session, GDLSession)) {
     stop("Argument must be a GDL Session Object")
@@ -33,11 +35,13 @@ gdl_indicators <- function(session) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' # Create a session using your API token (provided by environment here)
 #' session <- gdl_session(Sys.getenv('GDL_API_TOKEN'))
 #' # Request list of available levels
 #' levels <- gdl_levels(session)
 #' head(levels, n=10)
+#' }
 gdl_levels <- function(session) {
   if (!is(session, GDLSession)) {
     stop("Argument must be a GDL Session Object")
@@ -58,11 +62,13 @@ gdl_levels <- function(session) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' # Create a session using your API token (provided by environment here)
 #' session <- gdl_session(Sys.getenv('GDL_API_TOKEN'))
 #' # Request list of countries
 #' countries <- gdl_countries(session)
 #' head(countries, n=10)
+#' }
 gdl_countries <- function(session) {
   if (!is(session, GDLSession)) {
     stop("Argument must be a GDL Session Object")
@@ -86,11 +92,13 @@ gdl_countries <- function(session) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' # Create a session using your API token (provided by environment here)
 #' session <- gdl_session(Sys.getenv('GDL_API_TOKEN'))
 #' # Request list of regions for India
 #' regions <- gdl_regions(session, 'IND')
 #' head(regions, n=10)
+#' }
 gdl_regions <- function(session, country) {
   if (!is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")

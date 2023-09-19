@@ -34,8 +34,10 @@ show.GDLSession <- setMethod('show', 'GDLSession', function(object) {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' # Create a session using your API token (provided by environment here)
 #' session <- gdl_session(Sys.getenv('GDL_API_TOKEN'))
+#' }
 gdl_session <- function(token) {
   session <- new('GDLSession',
                  token = token,
