@@ -10,6 +10,11 @@
 #'
 #' @importFrom methods is
 #' @export
+#'
+#' @examples
+#' # Create a session using your API token (provided by environment here)
+#' session <- gdl_session(Sys.getenv('GDL_API_TOKEN'))
+#' session <- set_country(session, 'IND')
 set_country <- function(session, country) {
   if (!is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
@@ -34,6 +39,13 @@ set_country <- function(session, country) {
 #'
 #' @importFrom methods is
 #' @export
+#'
+#' @examples
+#' # Create a session using your API token (provided by environment here)
+#' session <- gdl_session(Sys.getenv('GDL_API_TOKEN'))
+#' # Customize parameters
+#' session <- set_dataset(session, 'shdi')
+#' session <- set_countries(session, c('BEL', 'LUX', 'NLD'))
 set_countries <- function(session, countries) {
   if (!is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
@@ -56,6 +68,11 @@ set_countries <- function(session, countries) {
 #'
 #' @importFrom methods is
 #' @export
+#'
+#' @examples
+#' # Create a session using your API token (provided by environment here)
+#' session <- gdl_session(Sys.getenv('GDL_API_TOKEN'))
+#' session <- set_countries_all(session)
 set_countries_all <- function(session) {
   if (!is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
@@ -76,6 +93,11 @@ set_countries_all <- function(session) {
 #' Dataset identifier (string)
 #'
 #' @export
+#'
+#' @examples
+#' # Create a session using your API token (provided by environment here)
+#' session <- gdl_session(Sys.getenv('GDL_API_TOKEN'))
+#' session <- set_dataset(session, 'shdi')
 set_dataset <- function(session, dataset) {
   if (!is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
@@ -102,6 +124,11 @@ set_dataset <- function(session, dataset) {
 #'
 #' @importFrom methods is
 #' @export
+#'
+#' @examples
+#' # Create a session using your API token (provided by environment here)
+#' session <- gdl_session(Sys.getenv('GDL_API_TOKEN'))
+#' session <- set_extrapolation_years_linear(session, 3)
 set_extrapolation_years_linear <- function(session, years) {
   if (!is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
@@ -130,6 +157,11 @@ set_extrapolation_years_linear <- function(session, years) {
 #'
 #' @importFrom methods is
 #' @export
+#'
+#' @examples
+#' # Create a session using your API token (provided by environment here)
+#' session <- gdl_session(Sys.getenv('GDL_API_TOKEN'))
+#' session <- set_extrapolation_years_nearest(session, 3)
 set_extrapolation_years_nearest <- function(session, years) {
   if (!is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
@@ -155,6 +187,11 @@ set_extrapolation_years_nearest <- function(session, years) {
 #'
 #' @importFrom methods is
 #' @export
+#'
+#' @examples
+#' # Create a session using your API token (provided by environment here)
+#' session <- gdl_session(Sys.getenv('GDL_API_TOKEN'))
+#' session <- set_indicator(session, 'iwi')
 set_indicator <- function(session, indicator) {
   if (!is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
@@ -179,6 +216,11 @@ set_indicator <- function(session, indicator) {
 #'
 #' @importFrom methods is
 #' @export
+#'
+#' @examples
+#' # Create a session using your API token (provided by environment here)
+#' session <- gdl_session(Sys.getenv('GDL_API_TOKEN'))
+#' session <- set_indicators(session, c('fridge', 'cellphone', 'tv'))
 set_indicators <- function(session, indicators) {
   if (!is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
@@ -202,6 +244,11 @@ set_indicators <- function(session, indicators) {
 #' Whether or not to use interpolation (boolean)
 #'
 #' @export
+#'
+#' @examples
+#' # Create a session using your API token (provided by environment here)
+#' session <- gdl_session(Sys.getenv('GDL_API_TOKEN'))
+#' session <- set_interpolation(session, TRUE)
 set_interpolation <- function(session, state) {
   if (!is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
@@ -227,6 +274,11 @@ set_interpolation <- function(session, state) {
 #'
 #' @importFrom methods is
 #' @export
+#'
+#' @examples
+#' # Create a session using your API token (provided by environment here)
+#' session <- gdl_session(Sys.getenv('GDL_API_TOKEN'))
+#' session <- set_levels(session, c(1,4))
 set_levels <- function(session, levels) {
   if (!is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")
@@ -252,6 +304,11 @@ set_levels <- function(session, levels) {
 #'
 #' @importFrom methods is
 #' @export
+#'
+#' @examples
+#' # Create a session using your API token (provided by environment here)
+#' session <- gdl_session(Sys.getenv('GDL_API_TOKEN'))
+#' session <- set_year(session, 2021)
 set_year <- function(session, year) {
   if (!is(session, GDLSession)) {
     stop("Primary argument must be a GDL Session Object")

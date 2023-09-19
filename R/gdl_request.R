@@ -10,6 +10,17 @@ GDL_BASEURL <- "https://globaldatalab.org"
 #' A valid GDL session object to interface with.
 #'
 #' @export
+#'
+#' @examples
+#' # Create a session using your API token (provided by environment here)
+#' session <- gdl_session(Sys.getenv('GDL_API_TOKEN'))
+#' # Customize parameters
+#' session <- set_indicator(session, 'iwi')
+#' session <- set_country(session, 'IND')
+#' # Finally, request the data from GDL
+#' iwi_india <- gdl_request(session)
+#' iwi_india[1:5, 3:8]
+#' # (showing only the five rows and columns for illustrative purposes)
 gdl_request <- function(session) {
   if (!is(session, GDLSession)) {
     stop("Argument must be a GDL Session Object")
