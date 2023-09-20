@@ -4,8 +4,9 @@ Version: 0.1
 Authors@R: c(
     person("Global Data Lab", email = "info@globaldatalab.org", role = "cph"),
     person("Aaron", "van Geffen", email = "aaron.vangeffen@ru.nl", role = c("aut", "cre")))
-Description: Retrieve datasets from the 'Global Data Lab' website directly into R data frames.
-    Functions are provided to reference available options (indicators, regions, countries) as well.
+Description: Retrieve datasets from the 'Global Data Lab' website <https://globaldatalab.org>
+    directly into R data frames. Functions are provided to reference available options
+    (indicators, levels, countries, regions) as well.
 Depends:
     R (>= 3.4)
 Imports:
