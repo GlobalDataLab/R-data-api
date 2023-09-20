@@ -8,6 +8,8 @@
 #' @param country
 #' An ISO3 country code.
 #'
+#' @returns An amended GDL session object.
+#'
 #' @importFrom methods is
 #' @export
 #'
@@ -38,6 +40,8 @@ set_country <- function(session, country) {
 #'
 #' @param countries
 #' A vector of ISO3 country codes.
+#'
+#' @returns An amended GDL session object.
 #'
 #' @importFrom methods is
 #' @export
@@ -70,6 +74,8 @@ set_countries <- function(session, countries) {
 #' @param session
 #' A valid GDL session object to interface with.
 #'
+#' @returns An amended GDL session object.
+#'
 #' @importFrom methods is
 #' @export
 #'
@@ -97,6 +103,8 @@ set_countries_all <- function(session) {
 #'
 #' @param dataset
 #' Dataset identifier (string)
+#'
+#' @returns An amended GDL session object.
 #'
 #' @export
 #'
@@ -129,6 +137,8 @@ set_dataset <- function(session, dataset) {
 #'
 #' @param years
 #' Number of years to extrapolate (integer)
+#'
+#' @returns An amended GDL session object.
 #'
 #' @importFrom methods is
 #' @export
@@ -165,6 +175,8 @@ set_extrapolation_years_linear <- function(session, years) {
 #' @param years
 #' Number of years to copy (integer)
 #'
+#' @returns An amended GDL session object.
+#'
 #' @importFrom methods is
 #' @export
 #'
@@ -197,6 +209,8 @@ set_extrapolation_years_nearest <- function(session, years) {
 #' @param indicator
 #' Indicator to retrieve (string)
 #'
+#' @returns An amended GDL session object.
+#'
 #' @importFrom methods is
 #' @export
 #'
@@ -227,6 +241,8 @@ set_indicator <- function(session, indicator) {
 #'
 #' @param indicators
 #' Vector of indicators to retrieve (string)
+#'
+#' @returns An amended GDL session object.
 #'
 #' @importFrom methods is
 #' @export
@@ -259,6 +275,8 @@ set_indicators <- function(session, indicators) {
 #' @param state
 #' Whether or not to use interpolation (boolean)
 #'
+#' @returns An amended GDL session object.
+#'
 #' @export
 #'
 #' @examples
@@ -289,6 +307,8 @@ set_interpolation <- function(session, state) {
 #'
 #' @param levels
 #' Vector of level identifiers (integers)
+#'
+#' @returns An amended GDL session object.
 #'
 #' @importFrom methods is
 #' @export
@@ -321,6 +341,8 @@ set_levels <- function(session, levels) {
 #'
 #' @param year
 #' Year to retrieve data for (integer)
+#'
+#' @returns An amended GDL session object.
 #'
 #' @importFrom methods is
 #' @export

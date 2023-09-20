@@ -31,6 +31,8 @@ show.GDLSession <- setMethod('show', 'GDLSession', function(object) {
 #' @param token
 #' A valid GDL API token, obtainable from GlobalDataLab.org
 #'
+#' @returns A GDL session object for the token with default indicators set.
+#'
 #' @export
 #'
 #' @examples

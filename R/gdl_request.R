@@ -9,6 +9,8 @@ GDL_BASEURL <- "https://globaldatalab.org"
 #' @param session
 #' A valid GDL session object to interface with.
 #'
+#' @returns A data frame containing the data returned from the GDL API.
+#'
 #' @export
 #'
 #' @examples

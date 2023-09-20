@@ -5,6 +5,8 @@
 #' @param session
 #' A valid GDL session object to interface with.
 #'
+#' @returns A data frame containing a list of indicators for the dataset.
+#'
 #' @export
 #'
 #' @examples
@@ -32,6 +34,8 @@ gdl_indicators <- function(session) {
 #' @param session
 #' A valid GDL session object to interface with.
 #'
+#' @returns A data frame containing a list of levels for the dataset.
+#'
 #' @export
 #'
 #' @examples
@@ -58,6 +62,8 @@ gdl_levels <- function(session) {
 #'
 #' @param session
 #' A valid GDL session object to interface with.
+#'
+#' @returns A data frame containing a list of countries for the dataset.
 #'
 #' @export
 #'
@@ -88,6 +94,8 @@ gdl_countries <- function(session) {
 #'
 #' @param country
 #' An ISO3 country code.
+#'
+#' @returns A data frame containing a list of regions for the country.
 #'
 #' @export
 #'
