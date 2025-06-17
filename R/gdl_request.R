@@ -42,7 +42,7 @@ gdl_request <- function(session) {
   url <- paste0(url, paste(session@indicators, collapse='+'), '/')
 
   # Countries?
-  if (nchar(session@countries) > 0) {
+  if (length(session@countries) > 0) {
     url <- paste0(url, paste(session@countries, collapse='+'), '/')
   }
 
