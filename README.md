@@ -41,7 +41,7 @@ sess <- gdl_session("SUBSTITUTE-WITH-YOUR-ACCESS-TOKEN")
 ```
 
 This session object can be used to build your next API request, and facilitates partial request reuse.
-For example, we can use it to retrieve the [IWI](https://globaldatalab.org/iwi/) indicator for India:
+For example, we can use it to retrieve the [IWI](https://globaldatalab.org/wealth/) indicator for India:
 
 ```R
 sess <- set_indicator(sess, 'iwi')
