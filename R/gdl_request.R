@@ -64,6 +64,9 @@ gdl_request <- function(session) {
     url <- paste0(url, '&extrapolation=2&nearest_years=', session@extrapolationYearsNearest)
   }
 
+  # Transposition
+  url <- paste0(url, '&transposition=', ifelse(session@transposition, 'vars', 'rows'))
+
   df <- gdl_request_csv(session, url)
   return(df)
 }

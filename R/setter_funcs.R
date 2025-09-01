@@ -331,6 +331,40 @@ set_levels <- function(session, levels) {
   return(session)
 }
 
+#' Enable transposition of years to variables.
+#'
+#' This enables transposition of years to variables. Note that this only applies
+#' to single-variable queries.
+#'
+#' @param session
+#' A valid GDL session object to interface with.
+#'
+#' @param value
+#' Turn transposition on (TRUE) or off (FALSE).
+#'
+#' @returns An amended GDL session object.
+#'
+#' @importFrom methods is
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' # Create a session using your API token (provided by environment here)
+#' session <- gdl_session(Sys.getenv('GDL_API_TOKEN'))
+#' session <- set_transposed(session, TRUE)
+#' }
+set_transposed <- function(session, value) {
+  if (!is(session, GDLSession)) {
+    stop("Primary argument must be a GDL Session Object")
+  }
+  if (!is.logical(value)) {
+    stop("Secondary argument must be logical")
+  }
+
+  session@transposition <- value
+  return(session)
+}
+
 #' Set year to retrieve data for
 #'
 #' Specify which year to retrieve data for.

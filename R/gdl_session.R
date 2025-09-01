@@ -11,7 +11,8 @@ GDLSession <- setClass('GDLSession', slots=list(
   year="numeric",
   interpolation="logical",
   extrapolationYearsLinear="numeric",
-  extrapolationYearsNearest="numeric"
+  extrapolationYearsNearest="numeric",
+  transposition="logical"
 ))
 
 #' GDLSession show function
