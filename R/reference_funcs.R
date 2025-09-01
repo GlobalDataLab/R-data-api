@@ -13,9 +13,8 @@
 #' \dontrun{
 #' # Create a session using your API token (provided by environment here)
 #' session <- gdl_session(Sys.getenv('GDL_API_TOKEN'))
-#' # Request list of available indicators
-#' indicators <- gdl_indicators(session)
-#' head(indicators, n=10)
+#' # Request list of available indicators for 'geos' dataset
+#' indicators <- session |> set_dataset('geos') |> gdl_indicators()
 #' }
 gdl_indicators <- function(session) {
   if (!is(session, GDLSession)) {
