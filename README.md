@@ -68,10 +68,10 @@ as a substitute. Consider the following example:
 ```R
 library(magrittr)
 
-sess <- sess %>%
-    set_dataset('shdi') %>%
-    set_countries(c('BEL', 'LUX', 'NLD')) %>%
-    set_indicators(c('healthindex', 'edindex', 'incindex')) %>%
+sess <- sess |>
+    set_dataset('shdi') |>
+    set_countries(c('BEL', 'LUX', 'NLD')) |>
+    set_indicators(c('healthindex', 'edindex', 'incindex')) |>
 shdi_benelux <- gdl_request(sess)
 ```
 
@@ -83,7 +83,8 @@ However, to facilitate reuse of the session object, we recommend against this.
 The GDL database may be explored fully without having to fall back to browsing the website.
 To this end, we provide the following reference functions:
 ```R
-gdl_indicators(session)    # retrieves a list of indicators
+gdl_datasets(session)      # retrieves a list of available datasets
+gdl_indicators(session)    # retrieves a list of indicators for the current dataset
 gdl_levels(session)        # retrieves a list of aggregation levels
 gdl_countries(session)     # retrieves a list of available countries
 gdl_regions(session, iso3) # retrieves a list of regions in a particular country
