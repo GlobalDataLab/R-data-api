@@ -1,6 +1,6 @@
 Package: gdldata
 Title: 'Global Data Lab' R API
-Version: 0.2
+Version: 0.3
 Authors@R: c(
     person("Global Data Lab", email = "info@globaldatalab.org", role = "cph"),
     person("Aaron", "van Geffen", email = "aaron.vangeffen@ru.nl", role = c("aut", "cre")))

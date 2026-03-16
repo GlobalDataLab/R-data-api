@@ -1,3 +1,8 @@
+# gdldata 0.3
+
+* Fix `set_countries_all` call leading to invalid urls
+* Retrieve and print number of API calls remaining in gdl_session
+
 # gdldata 0.2
 
 * Now defaulting to the 'wealth' dataset following deprecation of 'areadata'.
