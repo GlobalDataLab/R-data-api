@@ -90,7 +90,7 @@ set_countries_all <- function(session) {
     stop("Primary argument must be a GDL Session Object")
   }
 
-  session@countries <- ''
+  session@countries <- character(0)
   return(session)
 }
 
