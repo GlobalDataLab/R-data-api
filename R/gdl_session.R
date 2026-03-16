@@ -53,5 +53,10 @@ gdl_session <- function(token) {
                  extrapolationYearsNearest = 0
   )
 
+  # Retrieve amount of API calls remaining
+  url <- paste0(GDL_BASEURL, '/', session@dataset, '/api/status/?token=', session@token)
+  df <- gdl_request_csv(session, url)
+  cat(df$message)
+
   return(session)
 }
